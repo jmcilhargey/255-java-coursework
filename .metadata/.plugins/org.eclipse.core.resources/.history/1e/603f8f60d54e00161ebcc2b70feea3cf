@@ -1,0 +1,13 @@
+import java.util.StringTokenizer;
+import javax.swing.JOptionPane;
+
+public class TestEmployee {
+
+	public static void main(String[] args) {
+		
+		String input;
+		int workers, managers, executives;
+		
+		JOptionPane.showInputDialog("Enter the number of workers: ")
+	}
+}

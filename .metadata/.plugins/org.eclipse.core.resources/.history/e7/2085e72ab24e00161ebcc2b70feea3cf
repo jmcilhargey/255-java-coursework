@@ -1,0 +1,20 @@
+
+public class LeapDay extends Day {
+	
+	int year;
+	
+	public LeapDay(int d, int m, int y) {
+		super(d , m);
+		year = y;
+	}
+	
+	public int findDayNum() {
+		
+		int dayNum = super.findDayNum();
+		
+		if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
+			dayNum++;
+		}
+		return dayNum;
+	}
+}

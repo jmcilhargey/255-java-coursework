@@ -1,0 +1,13 @@
+import javax.swing.JOptionPane;
+
+public class TestDay {
+
+	public static void main(String[] args) {
+		
+		String input;
+		
+		input = JOptionPane.showInputDialog("hi");
+
+	}
+
+}

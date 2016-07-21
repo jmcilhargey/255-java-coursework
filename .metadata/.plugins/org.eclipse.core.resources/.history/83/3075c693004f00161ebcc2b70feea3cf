@@ -1,0 +1,18 @@
+
+public class Worker extends Employee {
+
+	private double pctBonus;
+	
+	Worker(String n, double s, double p) {
+		super(n, s);
+		pctBonus = p;
+	}
+	
+	double getPctBonus() {
+		return pctBonus;
+	}
+	
+	double computeBonus() {
+		return getSalary() * pctBonus;
+	}
+}

@@ -1,0 +1,11 @@
+
+public class Worker extends Employee {
+
+	Worker(String n, double s) {
+		super(n, s);
+	}
+	
+	double computeBonus() {
+		return 1;
+	}
+}

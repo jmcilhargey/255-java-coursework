@@ -1,0 +1,12 @@
+import java.io.*;
+import javax.swing.*;
+
+public class TestStudentExtIo {
+
+	public static void main(String[] args) {
+		
+		
+
+	}
+
+}

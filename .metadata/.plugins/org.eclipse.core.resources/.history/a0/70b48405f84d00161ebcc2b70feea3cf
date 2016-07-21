@@ -1,0 +1,12 @@
+
+public class TestSiblingExt {
+
+	public static void main(String[] args) {
+		
+		SiblingExt sibling1, sibling2, sibling3;
+		String input, output, name;
+		int age, height;
+		double weight;
+	}
+
+}

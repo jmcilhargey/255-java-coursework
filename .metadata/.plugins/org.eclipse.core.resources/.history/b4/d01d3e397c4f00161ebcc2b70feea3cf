@@ -1,0 +1,30 @@
+import javax.swing.*;
+import java.awt.*
+
+public class ShowGridLayout extends JFrame {
+	
+	public ShowGridLayout() {
+		
+		
+	}
+}
+
+public class Calculator {
+
+	public static void main (String [] args) {
+		
+		JFrame frame = new JFrame("Calculator");
+		frame.setSize(350, 500);
+		
+		JButton okBtn = new JButton("Ok");
+		frame.add(okBtn);
+		
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+		
+
+		
+	}
+	
+}

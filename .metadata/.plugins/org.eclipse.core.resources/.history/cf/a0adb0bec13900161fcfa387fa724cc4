@@ -1,0 +1,19 @@
+
+public class Rectangle {
+	
+	private double length;
+	private double width;
+	
+	public double findArea() {
+		return 0;
+	}
+	
+	public double findPerim() {
+		return 0;
+	}
+	
+	public double findDiag() {
+		return 0;
+	}
+	
+}

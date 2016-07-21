@@ -1,0 +1,40 @@
+// Assignment 4
+// Joe McIlhargey
+// ComSc-255
+import javax.swing.JOptionPane;
+
+public class Sibling implements Status {
+
+	private String name;
+	private int age;
+	private double weight;
+	
+	public Sibling(String n, int a, double w) {
+		name = n;
+		age = a;
+		weight = w;
+	}
+	public String getName() {
+		return name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public double getWeight() {
+		return weight;
+	}
+	
+	public String getStatus() {
+		
+		String status = "";
+		
+		status += "Sibling\n";
+		status += "Name=" + name + "," + "Age=" + age + "Weight=" + weight + "\n";
+		
+		return status;
+	}
+	
+	public void displayStatus() {
+		JOptionPane.showMessageDialog(null, getStatus());
+	}
+}

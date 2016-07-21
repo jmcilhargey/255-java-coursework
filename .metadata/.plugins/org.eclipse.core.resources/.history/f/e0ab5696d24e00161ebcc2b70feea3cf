@@ -1,0 +1,12 @@
+
+public class Worker extends Employee {
+
+	Worker(String n, double s) {
+		name = n;
+		salary = s;
+	}
+	
+	double computeBonus() {
+		return 1;
+	}
+}

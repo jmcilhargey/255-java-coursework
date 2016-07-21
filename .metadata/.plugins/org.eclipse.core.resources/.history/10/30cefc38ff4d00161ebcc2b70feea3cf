@@ -1,0 +1,9 @@
+
+public class StudentExt extends Student {
+
+	StudentExt(int i, String n, int [] ex) {
+		
+		super(i, n, ex);
+	}
+	
+}

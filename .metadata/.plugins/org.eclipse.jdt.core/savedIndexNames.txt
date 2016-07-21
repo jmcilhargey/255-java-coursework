@@ -1,0 +1,16 @@
+INDEX VERSION 1.127+/Users/joemcilhargey/Dropbox/java-projects/.metadata/.plugins/org.eclipse.jdt.core
+1966955711.index
+1777817474.index
+830346665.index
+800452396.index
+747113949.index
+4132254105.index
+355012002.index
+1182792595.index
+2946115891.index
+2693195330.index
+1796149482.index
+2233347264.index
+1931961972.index
+2055901506.index
+820456057.index

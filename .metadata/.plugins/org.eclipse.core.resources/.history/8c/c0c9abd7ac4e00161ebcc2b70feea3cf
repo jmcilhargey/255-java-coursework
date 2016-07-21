@@ -1,0 +1,20 @@
+
+public class Day {
+
+	private int day;
+	protected int month;
+	
+	public Day(int d, int m) {
+		day = d;
+		month = m;
+	}
+	
+	public int getDay() {
+		return day;
+	}
+	
+	public int getMonth() {
+		return month;
+	}
+	
+}

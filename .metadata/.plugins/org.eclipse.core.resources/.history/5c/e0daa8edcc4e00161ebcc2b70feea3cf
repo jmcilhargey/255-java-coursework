@@ -1,0 +1,56 @@
+import javax.swing.JOptionPane;
+
+public class TestStatus {
+	
+	public static void main(String[] args) {
+		
+		Sibling sibling1, sibling2;
+		Rectangle rect1, rect2, rect3;
+		String input, name;
+		int age, weight;
+		double length, width;
+
+		input = JOptionPane.showInputDialog("Enter the length for the first rectangle: ");
+		length = Double.parseDouble(input);
+		
+		input = JOptionPane.showInputDialog("Enter the width for the first rectangle: ");
+		width = Double.parseDouble(input);
+		
+		for (int i = 1; i <= 2; i++) {
+			
+			input = JOptionPane.showInputDialog("Enter the length: ");
+			length = Double.parseDouble(input);
+			
+			input = JOptionPane.showInputDialog("Enter the width: ");
+			width = Double.parseDouble(input);
+			
+			Rectangle rect = new Rectangle(length, width);
+			
+			output += "Values for rectangle " + i + ":\n";
+			output += "Length: " + rect.getLength() + "\n";
+			output += "Width: " + rect.getWidth() + "\n";
+			output += "Perimeter: " + rect.getPerimeter() + "\n";
+			output += "Area: " + rect.getArea() + "\n\n";
+		}
+		
+		name = JOptionPane.showInputDialog("Enter the name of the first sibling: ");
+		
+		input = JOptionPane.showInputDialog("Enter the age of the first sibling: ");
+		age = Integer.parseInt(input);
+		
+		input = JOptionPane.showInputDialog("Enter the weight of the first sibling: ");
+		weight = Integer.parseInt(input);
+		
+		sibling1 = new Sibling(name, age, weight);
+		
+		name = JOptionPane.showInputDialog("Enter the name of the second sibling: ");
+		
+		input = JOptionPane.showInputDialog("Enter the age of the second sibling: ");
+		age = Integer.parseInt(input);
+		
+		input = JOptionPane.showInputDialog("Enter the weight of the second sibling: ");
+		weight = Integer.parseInt(input);
+		
+		sibling2 = new Sibling(name, age, weight);
+	}
+}

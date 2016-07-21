@@ -1,0 +1,17 @@
+
+public class Manager extends Employee {
+
+	private double pctBonus;
+	
+	Manager(String n, double s) {
+		super(n, s);
+	}
+	
+	double getPctBonus() {
+		return pctBonus;
+	}
+	
+	double computeBonus() {
+		return getSalary() * pctBonus;
+	}
+}

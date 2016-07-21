@@ -1,0 +1,73 @@
+import java.util.StringTokenizer;
+import javax.swing.JOptionPane;
+
+public class TestEmployee {
+
+	public static void main(String[] args) {
+		
+		String input, name;
+		double salary, pctBonus, travelExpense, options;
+		int workers, managers, executives;
+		
+		input = JOptionPane.showInputDialog("Enter the number of workers: ");
+		workers = Integer.parseInt(input);
+		
+		input = JOptionPane.showInputDialog("Enter the number of managers: ");
+		managers = Integer.parseInt(input);
+		
+		input = JOptionPane.showInputDialog("Enter the number of executives: ");
+		executives = Integer.parseInt(input);
+		
+		Employee employees[] = new Employee [workers + managers + executives];
+		
+		int i;
+		
+		for (i = 0; i < workers; i++) {
+			
+			name = JOptionPane.showInputDialog("Enter the worker name: ");
+			
+			input = JOptionPane.showInputDialog("Enter the worker salary: ");
+			salary = Double.parseDouble(input);
+			
+			input = JOptionPane.showInputDialog("Enter the worker percent bonus: ");
+			pctBonus = Double.parseDouble(input);
+			
+			employees[i] = new Worker(name, salary, pctBonus);
+		}
+		
+		for (i = workers - 1; i < workers + managers; i++) {
+			
+			name = JOptionPane.showInputDialog("Enter the manager name: ");
+			
+			input = JOptionPane.showInputDialog("Enter the manager salary: ");
+			salary = Double.parseDouble(input);
+			
+			input = JOptionPane.showInputDialog("Enter the manager percent bonus: ");
+			pctBonus = Double.parseDouble(input);
+			
+			input = JOptionPane.showInputDialog("Enter the manager travel expense: ");
+			travelExpense = Double.parseDouble(input);
+			
+			employees[i] = new Manager(name, salary, pctBonus, travelExpense);
+		}
+		
+		for (i = workers + managers - 1; i < workers + managers + executives; i++) {
+			
+			name = JOptionPane.showInputDialog("Enter the executive name: ");
+			
+			input = JOptionPane.showInputDialog("Enter the executive salary: ");
+			salary = Double.parseDouble(input);
+			
+			input = JOptionPane.showInputDialog("Enter the executive percent bonus: ");
+			pctBonus = Double.parseDouble(input);
+			
+			input = JOptionPane.showInputDialog("Enter the executive travel expense: ");
+			travelExpense = Double.parseDouble(input);
+			
+			input = JOptionPane.showInputDialog("Enter the executive options: ");
+			options = Double.parseDouble(input);
+			
+			employees[i] = new Executive(name, salary, pctBonus, travelExpense, optionsCount);
+		}
+	}
+}

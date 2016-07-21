@@ -1,0 +1,107 @@
+import java.util.StringTokenizer;
+import javax.swing.JOptionPane;
+
+public class TestEmployee {
+
+	public static void main(String[] args) {
+		
+		String input, name;
+		double salary, pctBonus, travelExpense, bonus;
+		int workers, managers, executives, optionsCount;
+		
+		input = JOptionPane.showInputDialog("Enter the number of workers: ");
+		workers = Integer.parseInt(input);
+		
+		input = JOptionPane.showInputDialog("Enter the number of managers: ");
+		managers = Integer.parseInt(input);
+		
+		input = JOptionPane.showInputDialog("Enter the number of executives: ");
+		executives = Integer.parseInt(input);
+		
+		Employee employees[] = new Employee [workers + managers + executives];
+		
+		int count = 0;
+		
+		for (int i = 0; i < workers; i++) {
+			
+			name = JOptionPane.showInputDialog("Enter the worker name: ");
+			
+			input = JOptionPane.showInputDialog("Enter the worker salary: ");
+			salary = Double.parseDouble(input);
+			
+			input = JOptionPane.showInputDialog("Enter the worker percent bonus: ");
+			pctBonus = Double.parseDouble(input);
+			
+			employees[count++] = new Worker(name, salary, pctBonus);
+		}
+		
+		for (int i = 0; i < managers; i++) {
+			
+			name = JOptionPane.showInputDialog("Enter the manager name: ");
+			
+			input = JOptionPane.showInputDialog("Enter the manager salary: ");
+			salary = Double.parseDouble(input);
+			
+			input = JOptionPane.showInputDialog("Enter the manager percent bonus: ");
+			pctBonus = Double.parseDouble(input);
+			
+			input = JOptionPane.showInputDialog("Enter the manager travel expense: ");
+			travelExpense = Double.parseDouble(input);
+			
+			employees[count++] = new Manager(name, salary, pctBonus, travelExpense);
+		}
+		
+		for (int i = 0; i < executives; i++) {
+			
+			name = JOptionPane.showInputDialog("Enter the executive name: ");
+			
+			input = JOptionPane.showInputDialog("Enter the executive salary: ");
+			salary = Double.parseDouble(input);
+			
+			input = JOptionPane.showInputDialog("Enter the executive percent bonus: ");
+			pctBonus = Double.parseDouble(input);
+			
+			input = JOptionPane.showInputDialog("Enter the executive travel expense: ");
+			travelExpense = Double.parseDouble(input);
+			
+			input = JOptionPane.showInputDialog("Enter the executive options: ");
+			optionsCount = Integer.parseInt(input);
+			
+			employees[count++] = new Executive(name, salary, pctBonus, travelExpense, optionsCount);
+		}
+		
+		String output, workerOut = "", managerOut = "", executiveOut = "";
+		
+		for (int i = 0; i < employees.length; i++) {
+			
+			name = employees[i].getName();
+			salary = employees[i].getSalary();
+			bonus = employees[i].computeBonus();
+			
+			if (employees[i] instanceof Worker) {
+				pctBonus = ((Worker)employees[i]).getPctBonus();
+				workerOut += "Name: " + name + "\nSalary: $" + salary + "\n"; 
+				workerOut += "Percent Bonus: " + pctBonus + "\nTotal Bonus: " + bonus;
+			}
+			
+			if (employees[i] instanceof Manager) {
+				pctBonus = ((Manager)employees[i]).getPctBonus();
+				travelExpense = ((Manager)employees[i]).getTravelExpense();
+				managerOut += "Name: " + name + "\nSalary: $" + salary + "\n"; 
+				managerOut += "Percent Bonus: " + pctBonus + "\nTotal Bonus: " + bonus + "\n";
+				managerOut += "Travel Expense: " + travelExpense;
+			}
+			
+			if (employees[i] instanceof Executive) {
+				pctBonus = ((Executive)employees[i]).getPctBonus();
+				travelExpense = ((Executive)employees[i]).getTravelExpense();
+				optionsCount = ((Executive)employees[i]).getOptionsCount();
+				executiveOut += "Name: " + name + "\nSalary: $" + salary + "\n"; 
+				executiveOut += "Percent Bonus: " + pctBonus + "\nTotal Bonus: " + bonus + "\n";
+				executiveOut += "Travel Expense: " + travelExpense + "\nOptions Count: " + optionsCount;
+			}
+			output = workerOut + managerOut + executiveOut;
+			JOptionPane.showMessageDialog(null, output);
+		}
+	}
+}

@@ -1,0 +1,19 @@
+import java.io.*;
+import javax.swing.*;
+
+public class TestStudentExtIo {
+
+	public static void main(String[] args) throws Exception {
+		
+		String input, output;
+		int studentCount;
+		
+		BufferedReader br = new BufferedReader(new FileReader("in.txt"));
+
+		PrintWriter pw = new PrintWriter(new FileWriter("out.txt"));
+		
+		input = br.readLine();
+		studentCount = Integer.parseInt(input);
+	}
+
+}

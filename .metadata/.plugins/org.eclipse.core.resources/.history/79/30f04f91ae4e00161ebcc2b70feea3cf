@@ -1,0 +1,10 @@
+
+public class LeapDay extends Day {
+	
+	int year;
+	
+	public LeapDay(int d, int m, int y) {
+		super(d , m);
+		year = y;
+	}
+}

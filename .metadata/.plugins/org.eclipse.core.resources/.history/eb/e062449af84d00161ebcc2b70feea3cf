@@ -1,0 +1,15 @@
+import javax.swing.JOptionPane;
+
+public class TestSiblingExt {
+
+	public static void main(String[] args) {
+		
+		SiblingExt sibling1, sibling2, sibling3;
+		String input, output, name;
+		int age, height;
+		double weight;
+		
+		name = JOptionPane.showInputDialog("Enter the name of the first sibling: ");
+	}
+
+}

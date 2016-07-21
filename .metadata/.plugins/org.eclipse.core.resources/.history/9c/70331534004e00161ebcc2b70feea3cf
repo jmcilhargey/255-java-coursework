@@ -1,0 +1,12 @@
+
+public class StudentExt extends Student {
+	
+	private String gradeType;
+
+	public StudentExt(int i, String n, int [] ex, String g) {
+		
+		super(i, n, ex);
+		gradeType = g;
+	}
+	
+}

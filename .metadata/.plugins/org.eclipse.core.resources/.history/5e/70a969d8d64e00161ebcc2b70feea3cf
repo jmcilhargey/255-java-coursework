@@ -1,0 +1,22 @@
+import java.util.StringTokenizer;
+import javax.swing.JOptionPane;
+
+public class TestEmployee {
+
+	public static void main(String[] args) {
+		
+		String input;
+		int workers, managers, executives;
+		
+		input = JOptionPane.showInputDialog("Enter the number of workers: ");
+		workers = Integer.parseInt(input);
+		
+		input = JOptionPane.showInputDialog("Enter the number of managers: ");
+		managers = Integer.parseInt(input);
+		
+		input = JOptionPane.showInputDialog("Enter the number of executives: ");
+		executives = Integer.parseInt(input);
+		
+		Employee employees[] = new Employee [workers + managers + executives];
+	}
+}
