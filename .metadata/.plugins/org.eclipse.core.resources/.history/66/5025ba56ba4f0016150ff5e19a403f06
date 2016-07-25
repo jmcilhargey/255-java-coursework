@@ -1,0 +1,146 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.border.*;
+import java.util.*;
+
+public class Calculator extends JFrame implements ActionListener {
+	
+	double total = 0;
+	String entered = "";
+	
+	JTextField results = new JTextField(entered);
+	
+	ArrayList<String> numbers = new ArrayList<String>();
+	ArrayList<String> operands = new ArrayList<String>();;
+	
+	private static final long serialVersionUID = 1L;
+
+	public Calculator() {
+		
+		JPanel keys = new JPanel();
+		keys.setLayout(new GridLayout(6, 4));
+		JButton btn;
+		
+		for (int i = 1; i <= 9; i++) {
+			
+			btn = new JButton(Integer.toString(i));
+			btn.setBorder(new LineBorder(Color.GRAY, 2));
+			btn.addActionListener(this);
+			keys.add(btn);
+		}
+		
+		JButton [] btns1 = { new JButton("0"), new JButton("."), new JButton("=") };
+		
+		for (JButton b : btns1) {
+			b.setBorder(new LineBorder(Color.GRAY, 2));
+			b.addActionListener(this);
+			keys.add(b);
+		}
+		
+		JButton [] btns2 = { new JButton("/"), new JButton("*"), new JButton("-"), new JButton("+"), new JButton("C") };
+		
+		for (JButton b : btns2) {
+			b.setBorder(new LineBorder(Color.MAGENTA, 2));
+			b.addActionListener(this);
+			keys.add(b);
+		}
+
+		JPanel display = new JPanel(new BorderLayout());
+		display.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+		
+		
+		results.setFont(new Font("SanSerif", Font.BOLD, 24));
+		results.setHorizontalAlignment(SwingConstants.RIGHT);
+		results.setEditable(false);
+		
+		display.add(results, BorderLayout.NORTH);
+		display.add(keys, BorderLayout.CENTER);
+		add(display, BorderLayout.CENTER);
+
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		
+		JButton clicked = (JButton) e.getSource();
+		String operation = clicked.getText();
+	
+		if (operation == "C") {
+			
+			entered = "";
+			results.setText(entered);
+			
+			numbers.clear();
+			operands.clear();
+
+		} else if (operation == "=") {
+			
+			if (entered.length() > 0) {
+				numbers.add(entered);
+			}
+			
+			if (numbers.size() >= 2) {
+				
+				total = Double.parseDouble(numbers.get(0));
+				int i = 1;
+				
+				for (String symbol : operands) {
+					// JOptionPane.showMessageDialog(null, symbol);
+					if (symbol.equals("*")) {
+						total *= Double.parseDouble(numbers.get(i));
+					} else if (symbol.equals("/")) {
+						total /= Double.parseDouble(numbers.get(i));
+					} else if (symbol.equals("+")) {
+						total += Double.parseDouble(numbers.get(i));
+					} else if (symbol.equals("-")) {
+						total -= Double.parseDouble(numbers.get(i));
+					}
+					i++;
+				}
+			}
+			
+			
+			entered = Double.toString(total);
+			results.setText(entered);
+			
+			numbers.clear();
+			operands.clear();
+			
+		} else if (operation == "/" || operation == "*" || operation == "+" || operation == "-") {
+			
+			if (entered.length() == 0 && operation.equals("-")) {
+				entered += "-";
+				
+			} else if (entered.length() > 0) {
+				
+				numbers.add(entered);
+				operands.add(operation);
+				entered = "";
+			}
+			
+			results.setText(entered);
+		} else if (operation == ".") {
+			
+			if (entered.indexOf('.') == -1) {
+				entered += operation;
+			}
+			results.setText(entered);
+		} else {
+			
+			entered += operation;
+			results.setText(entered);
+		}
+		
+	}
+	
+	public static void main (String [] args) {
+			
+			Calculator frame = new Calculator();
+			frame.setTitle("Calculator");
+			frame.setSize(350, 500);
+			
+			frame.setLocationRelativeTo(null);
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.setVisible(true);			
+	}
+}
